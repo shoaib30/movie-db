@@ -1,0 +1,40 @@
+<link href="bower_components/polymer/polymer.html" rel="import">
+<link href="bower_components/paper-card/paper-card.html" rel="import">
+
+<dom-module id="actor-card">
+    <style>
+        /* CSS rules for your element */
+
+        paper-card {
+            width: 400px;
+            height: 500px;
+        }
+
+        .card-content {
+            font-size: 20px;
+        }
+    </style>
+    <template>
+        <!-- local DOM for your element -->
+        <paper-card elevation="3" class="fancy" heading="" image={{actordata.image_path}}>
+            <div class="card-content">
+                {{actordata.name}}
+            </div>
+            <div class="card-actions">
+                {{actordata.dob}}
+            </div>
+        </paper-card>
+    </template>
+
+    <script>
+        Polymer({
+            is: "actor-card",
+            properties: {
+                actordata: {
+                    type: Object,
+                }
+            },
+            ready: function(e) {}
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,22 @@
+{
+  "name": "movie-db",
+  "homepage": "https://github.com/shoaib30/movie-db",
+  "authors": [
+    "shoaib30 <shoaib30@gmail.com>"
+  ],
+  "description": "database of movies",
+  "main": "index.html",
+  "keywords": [
+    "movie",
+    "db"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

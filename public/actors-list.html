@@ -1,0 +1,45 @@
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="actor-card.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-list/iron-list.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<dom-module id="actors-list">
+    <style include="iron-flex">
+        :host {
+            @apply(--layout-horizontal);
+            @apply(--layout-wrap);
+            @apply(--layout-flex);
+            @apply(--layout-around-justified);
+            height: 100%;
+            max-width: 1000px;
+            margin: 20 auto;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        actor-card {
+            max-width: 400px;
+            min-width: 250px;
+            padding: 29px;
+        }
+    </style>
+    <template>
+        <!-- local DOM for your element -->
+        <iron-ajax auto url="list-actors" handle-as="json" last-response="{{actors}}"></iron-ajax>
+        <template is="dom-repeat" items="{{actors}}">
+            <div>
+                <actor-card actordata={{item}}></actor-card>
+            </div>
+        </template>
+    </template>
+
+    <script>
+        Polymer({
+            is: "actors-list",
+            properties: {
+
+            },
+            ready: function(e) {}
+        });
+    </script>
+</dom-module>
